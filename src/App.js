@@ -13,7 +13,9 @@ import AfterpayClearpayMessage from "./components/demos/AfterpayClearpayMessage"
 
 import "./styles.css";
 
-const stripePromise = loadStripe("pk_test_6pRNASCoBOKtIshFeQd4XMUh");
+const stripePromise = loadStripe(
+  "pk_test_51PKzvaHui8JNyJ0cvJ84O0DCqtJpF8A6N01gTOqxbIeT72DA0CzIsoYaBEmImYF5igkswvfkIVvg5RnbjcKjA5C300QaFhti89"
+);
 
 const demos = [
   {

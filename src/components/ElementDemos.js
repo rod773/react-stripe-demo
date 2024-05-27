@@ -1,11 +1,12 @@
-import React from "react";
-import {
-  Routes,
-  Route,
-  Navigate,
-  useLocation,
-  useNavigate,
-} from "react-router-dom";
+import AfterpayClearpayMessage from "./demos/AfterpayClearpayMessage";
+import CardForm from "./demos/CardForm";
+import FpxBankForm from "./demos/FpxBankForm";
+import IbanForm from "./demos/IbanForm";
+import IdealBankForm from "./demos/IdealBankForm";
+import PaymentRequestForm from "./demos/PaymentRequestForm";
+
+import { useLocation, useNavigate, Routes, Route } from "react-router-dom";
+import SplitForm from "./demos/SplitForm";
 
 const ElementDemos = ({ demos }) => {
   const location = useLocation();
@@ -28,7 +29,26 @@ const ElementDemos = ({ demos }) => {
           ))}
         </select>
       </div>
-      <Routes></Routes>
+
+      <Routes>
+        <Route
+          path="afterpay-clearpay-message"
+          element={<AfterpayClearpayMessage />}
+        />
+        <Route path="card-element" element={<CardForm />} />
+        <Route path="split-card-element" element={<SplitForm />} />
+        <Route
+          path="payment-request-button-element"
+          element={<PaymentRequestForm />}
+        />
+        <Route path="ideal-bank-element" element={<IdealBankForm />} />
+        <Route path="ban-element" element={<IbanForm />} />
+        <Route path="fpx-bank-element" element={<FpxBankForm />} />
+        <Route
+          path="afterpay-clearpay-message"
+          element={<AfterpayClearpayMessage />}
+        />
+      </Routes>
     </div>
   );
 };
