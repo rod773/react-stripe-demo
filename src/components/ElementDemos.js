@@ -1,15 +1,15 @@
 import React from "react";
 import {
-  Switch,
+  Routes,
   Route,
-  Redirect,
+  Navigate,
   useLocation,
-  useHistory,
+  useNavigate,
 } from "react-router-dom";
 
 const ElementDemos = ({ demos }) => {
   const location = useLocation();
-  const history = useHistory();
+  const navigate = useNavigate();
 
   return (
     <div className="DemoWrapper">
@@ -18,7 +18,7 @@ const ElementDemos = ({ demos }) => {
           className="DemoPicker"
           value={location.pathname}
           onChange={(event) => {
-            history.push(event.target.value);
+            navigate(event.target.value);
           }}
         >
           {demos.map(({ path, label }) => (
@@ -28,16 +28,7 @@ const ElementDemos = ({ demos }) => {
           ))}
         </select>
       </div>
-      <Switch>
-        <Redirect to={demos[0].path} from="/" exact />
-        {demos.map(({ path, component: Component }) => (
-          <Route key={path} path={path}>
-            <div className="Demo">
-              <Component />
-            </div>
-          </Route>
-        ))}
-      </Switch>
+      <Routes></Routes>
     </div>
   );
 };
